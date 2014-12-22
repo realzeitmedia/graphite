@@ -85,6 +85,7 @@ template "#{docroot}/graphite/local_settings.py" do
             :remote_user_auth => node['graphite']['web']['auth']['REMOTE_USER_AUTH'],
             :login_url => node['graphite']['web']['auth']['LOGIN_URL'],
             :email => node['graphite']['web']['email'])
+            :secret_key => node['graphite']['web']['SECRET_KEY'])
   notifies :reload, graphite_web_service_resource
 end
 
